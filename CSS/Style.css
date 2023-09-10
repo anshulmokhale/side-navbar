@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+@keyframes wipe-out-right {
+    from {
+        clip-path: inset(0 0 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 100%);
+    }
+}
+
+[transition-style="out:wipe:right"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-out-right both;
+    animation-delay: 1s;
+}
+
+/* Additional styles for the animated element */
+.animated-element {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 38%, rgba(0, 212, 255, 1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+
+/* Additional styles for the content */
+.content {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.navigation {
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: #97FFF4;
+
+}
+
+.menu-btn a {
+    padding: 5px;
+    font-size: 25px;
+}
+
+.logo img {
+    height: 50px;
+    width: 250px;
+}
+
+.body {
+    margin-top: 54px;
+    display: flex;
+}
+
+/* nav menu with animation starts */
+@keyframes openMenu {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes closeMenu {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.open-menu {
+    animation: openMenu 0.5s ease-in-out both;
+}
+
+
+
+.close-menu {
+    animation: closeMenu 0.5s ease-in-out both;
+}
+
+.navmenu {
+    display: none;
+    top: 54px;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    background-color: #337CCF;
+
+}
+
+.navmenu li {
+    list-style: none;
+    margin-top: 2em;
+    border: 2px solid white;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+}
+
+.navmenu a {
+    text-decoration: none;
+    color: white;
+}
+
+.navli6 {
+    margin-bottom: 2em;
+}
+
+.navmenushow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* Nav menu with animation over */
+
+.restbody {
+    height: 100vh;
+
+}
